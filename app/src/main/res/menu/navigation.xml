@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_lib"
+        android:icon="@drawable/book_open_32px"
+        android:title="@string/title_lib" />
+
+    <item
+        android:id="@+id/navigation_games"
+        android:icon="@drawable/puzzle_32px"
+        android:title="@string/title_games" />
+
+    <item
+        android:id="@+id/navigation_decks"
+        android:icon="@drawable/layers_32px"
+        android:title="@string/title_decks" />
+
+    <item
+        android:id="@+id/navigation_dict"
+        android:icon="@drawable/ribbon_32px"
+        android:title="@string/title_dict" />
+
+</menu>
