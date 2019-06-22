@@ -44,7 +44,8 @@ public class MainActivity extends AppCompatActivity {
     private LinearLayout lay_games;
     private RelativeLayout lay_decks, lay_dict, lay_lib;
     private ListView lv_decks, tab_lv1, tab_lv2, tab_lv3, dict_lv, books_grid;
-    private Button decks_add_btn, decks_delete_btn, tab1_btn, tab2_btn, tab3_btn, dict_add_btn, dict_delete_btn;
+    private Button decks_add_btn, decks_delete_btn, tab1_btn, tab2_btn, tab3_btn;
+    private Button dict_add_btn, dict_delete_btn, help1_btn, help2_btn, help3_btn;
     private TabHost tabHost;
     private RadioButton difM2, difH2, difM3, difH3, russian, english;
     private EditText dict_edit_add, decks_edit_add;
@@ -377,6 +378,9 @@ public class MainActivity extends AppCompatActivity {
             tab1_btn = (Button)findViewById(R.id.tab1_start_btn);
             tab2_btn = (Button)findViewById(R.id.tab2_start_btn);
             tab3_btn = (Button)findViewById(R.id.tab3_start_btn);
+            help1_btn = (Button)findViewById(R.id.tab1_help_btn);
+            help2_btn = (Button)findViewById(R.id.tab2_help_btn);
+            help3_btn = (Button)findViewById(R.id.tab3_help_btn);
             tab_lv1 = (ListView)findViewById(R.id.tab1_lv);
             tab_lv2 = (ListView)findViewById(R.id.tab2_lv);
             tab_lv3 = (ListView)findViewById(R.id.tab3_lv);
@@ -723,9 +727,63 @@ public class MainActivity extends AppCompatActivity {
             }
         };
 
+        View.OnClickListener help1 = new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                AlertDialog alertDialog = new AlertDialog.Builder(MainActivity.this).create();
+                alertDialog.setTitle("Игра на запоминание");
+                alertDialog.setMessage("Вам последовательно предоставляются карточки со словами на иностранном языке. " +
+                        "Вы должны перевести эти слова в голове, после чего перевернуть карточку и оценить свой перевод.");
+                alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.dismiss();
+                            }
+                        });
+                alertDialog.show();
+            }
+        };
+
+        View.OnClickListener help2 = new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                AlertDialog alertDialog = new AlertDialog.Builder(MainActivity.this).create();
+                alertDialog.setTitle("Игра на перевод");
+                alertDialog.setMessage("Вам последовательно предоставляются слова, либо на русском, либо на английском языке. " +
+                        "Ваша задача состоит в том, чтобы выбрать для слов правильные переводы.");
+                alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.dismiss();
+                            }
+                        });
+                alertDialog.show();
+            }
+        };
+
+        View.OnClickListener help3 = new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                AlertDialog alertDialog = new AlertDialog.Builder(MainActivity.this).create();
+                alertDialog.setTitle("Игра на вставку букв");
+                alertDialog.setMessage("Вам последовательно предоставляются слова с случайными пропущенными буквами. " +
+                        "Ваша задача состоит в том, чтобы вставить их в слово в нужном порядке.");
+                alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.dismiss();
+                            }
+                        });
+                alertDialog.show();
+            }
+        };
+
         tab1_btn.setOnClickListener(tab1_OK);
         tab2_btn.setOnClickListener(tab2_OK);
         tab3_btn.setOnClickListener(tab3_OK);
+        help1_btn.setOnClickListener(help1);
+        help2_btn.setOnClickListener(help2);
+        help3_btn.setOnClickListener(help3);
     }
 
     private void createDialogBuilder(){
