@@ -16,6 +16,7 @@
         android:layout_below="@id/progressBar"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
+        android:layout_marginTop="100dp"
         android:gravity="center"
         android:textSize="25dp"
         android:background="@drawable/tv_border"
@@ -23,6 +24,7 @@
         android:layout_height="170dp" />
     <Button
         android:id="@+id/show"
+        android:layout_marginTop="20dp"
         android:text="Перевернуть"
         android:layout_below="@id/word"
         android:gravity="center"
